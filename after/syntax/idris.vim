@@ -20,6 +20,7 @@ syntax match idrNiceOperator "\<pi\>" conceal cchar=π
 syntax match idrNiceOperator "==" conceal cchar=≡
 syntax match idrNiceOperator "\/=" conceal cchar=≠
 syntax match idrNiceOperator ">>" conceal cchar=»
+syntax match idrNiceOperator "_|_" conceal cchar=⊥
 
 let s:extraConceal = 1
 " Some windows font don't support some of the characters,
