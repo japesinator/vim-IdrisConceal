@@ -19,8 +19,7 @@ syntax match idrNiceOperator "\<sqrt\>" conceal cchar=√
 syntax match idrNiceOperator "\<pi\>" conceal cchar=π
 syntax match idrNiceOperator "==" conceal cchar=≡
 syntax match idrNiceOperator "\/=" conceal cchar=≠
-syntax match idrNiceOperator ">>" conceal cchar=»
-syntax match idrNiceOperator "_|_" conceal cchar=⊥
+
 
 let s:extraConceal = 1
 " Some windows font don't support some of the characters,
@@ -40,7 +39,7 @@ if has("win32")
 endif
 
 if s:extraConceal
-    syntax match idrNiceOperator "\<undefined\>" conceal cchar=⊥
+    syntax match idrNiceOperator "_|_" conceal cchar=⊥    
 
     " Match greater than and lower than w/o messing with Kleisli composition
     syntax match idrNiceOperator "<=\ze[^<]" conceal cchar=≤
@@ -50,7 +49,6 @@ if s:extraConceal
     syntax match idrNiceOperator "=\zs<<" conceal cchar=«
 
     syntax match idrNiceOperator "++" conceal cchar=⧺
-    syntax match idrNiceOperator "\<forall\>" conceal cchar=∀
     syntax match idrNiceOperator "-<" conceal cchar=↢
     syntax match idrNiceOperator ">-" conceal cchar=↣
     syntax match idrNiceOperator "-<<" conceal cchar=⤛
@@ -60,12 +58,8 @@ if s:extraConceal
     syntax match idrNiceOperator /\s\.\s/ms=s+1,me=e-1 conceal cchar=∘
     syntax match idrNiceOperator "\.\." conceal cchar=‥
 
-    syntax match idrQQEnd "|\]" contained conceal cchar=〛
-    " sy match idrQQEnd "|\]" contained conceal=〚
-
     syntax match idrNiceOperator "`elem`" conceal cchar=∈
     syntax match idrNiceOperator "`notElem`" conceal cchar=∉
-    syntax match idrNiceOperator "()" conceal cchar=∅
 endif
 
 hi link idrNiceOperator Operator
