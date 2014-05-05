@@ -22,6 +22,10 @@ syntax match idrNiceOperator "\/=" conceal cchar=≠
 
 
 let s:extraConceal = 1
+
+let s:doubleArrow = 1
+" Set this to 0 to use the more technically correct arrow from bar
+
 " Some windows font don't support some of the characters,
 " so if they are the main font, we don't load them :)
 if has("win32")
@@ -39,13 +43,18 @@ if has("win32")
 endif
 
 if s:extraConceal
-    syntax match idrNiceOperator "_|_" conceal cchar=⊥    
+    syntax match idrNiceOperator "_|_" conceal cchar=⊥
 
     " Match greater than and lower than w/o messing with Kleisli composition
     syntax match idrNiceOperator "<=\ze[^<]" conceal cchar=≤
     syntax match idrNiceOperator ">=\ze[^>]" conceal cchar=≥
 
-    syntax match idrNiceOperator "=>" conceal cchar=⇒
+    if s:doubleArrow
+      syntax match idrNiceOperator "=>" conceal cchar=⇒
+    else
+      syntax match idrNiceOperator "=>" conceal cchar=↦
+    endif
+
     syntax match idrNiceOperator "=\zs<<" conceal cchar=«
 
     syntax match idrNiceOperator "++" conceal cchar=⧺
