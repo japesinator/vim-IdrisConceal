@@ -1,3 +1,8 @@
+OFFICIALLY DEPRECATED
+=====================
+
+This functionality has now been integrated into [idris-vim](https://github.com/idris-hackers/idris-vim).  This repository will not receive updates and will only remain for compatibility purposes.
+
 Vim-IdrisConceal
 ================
 
