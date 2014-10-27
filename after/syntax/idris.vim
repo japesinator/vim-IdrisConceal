@@ -43,7 +43,7 @@ if has("win32")
 endif
 
 if s:extraConceal
-    syntax match idrNiceOperator "_|_" conceal cchar=⊥
+    syntax match idrNiceOperator "Void" conceal cchar=⊥
 
     " Match greater than and lower than w/o messing with Kleisli composition
     syntax match idrNiceOperator "<=\ze[^<]" conceal cchar=≤
@@ -74,4 +74,3 @@ endif
 hi link idrNiceOperator Operator
 hi! link Conceal Operator
 setlocal conceallevel=2
-
